@@ -17,6 +17,14 @@ public class EmployeeService {
         employeeRepository.getAllEmployeeList();
         return employeeRepository.getAllEmployeeList();
     }
+    //id yi alacak metot yazıcaz
+    public Employee getEmployeeGetById(String id){
+        return employeeRepository.getEmployeeById(id);
+    }
+
+    public List<Employee> getEmployeeWithParams(String firstName , String lastName){
+        return employeeRepository.getEmployeeWithParams(firstName,lastName);
+    }
 }
 
 
