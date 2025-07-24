@@ -30,7 +30,7 @@ public class RestEmployeeController {
         return employeeService.getEmployeeGetById(id);
     }
 
-    @GetMapping(path = "with-params")
+    @GetMapping(path = "/with-params")
     public List<Employee> getEmployeeWithParams(@RequestParam(name = "firstName",required = false) String fistName,
                                                 @RequestParam(name = "lastName",required = false) String lastName) {
 
@@ -42,6 +42,12 @@ public class RestEmployeeController {
     @PostMapping(path = "/save-employee")
     public Employee saveEmployee(@RequestBody Employee newEmployee){
         return  employeeService.saveEmployee(newEmployee);
+    }
+
+    @DeleteMapping(path = "/delete-employee/{id}")
+    //path Variableyi id si şu olanı bana getir ve sil anlamında kullanıcaz
+    public boolean deleteEmployee(@PathVariable(name = "id") String id){
+        return employeeService.deleteEmployee(id);
     }
 
 
